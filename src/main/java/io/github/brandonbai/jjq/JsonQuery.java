@@ -29,7 +29,7 @@ public class JsonQuery {
                     if (f.matches("\\d")) {
                         object = ((JSONArray) object).get(Integer.parseInt(f));
                     } else {
-                        object = ((JSONArray) object).get(0);
+                        throw new JqException("Illegal expressions, " + expression);
                     }
                 } else if (object instanceof JSONObject) {
                     object = ((JSONObject) object).get(f);
